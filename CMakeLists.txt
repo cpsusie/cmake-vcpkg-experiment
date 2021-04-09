@@ -11,7 +11,7 @@ include_directories("include")
 
 add_library(Foobar INTERFACE)
 
-install(FILES include/library.hpp DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
-install(FILES include/impl/target_me.hpp DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"/impl)
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/foobar/ FILES_MATCHING PATTERN "*.hpp")
+
 
 add_executable(Test program.cpp)
